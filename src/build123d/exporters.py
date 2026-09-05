@@ -468,7 +468,9 @@ class ExportDXF(Export2D):
         unit (Unit, optional): The unit used for the exported DXF. It should be
             one of the Unit enums: Unit.MC, Unit.MM, Unit.CM,
             Unit.M, Unit.IN, or Unit.FT. Defaults to Unit.MM.
-        color (ColorLike | None, optional): The default color for shapes.
+        color (ColorLike | None, optional): The default color for shapes. Use a
+            color name, hexadecimal value, or normalized RGB(A) tuple. Legacy
+            ColorIndex values remain supported with a DeprecationWarning.
             Defaults to None.
         line_weight (Optional[float], optional): The default line weight
             (stroke width) for shapes, in millimeters. . Defaults to None.
@@ -558,7 +560,9 @@ class ExportDXF(Export2D):
         Args:
             name (str): The name of the layer definition. Must be unique among all layers.
             color (ColorLike | None, optional): The color for shapes on this layer.
-                Defaults to None.
+                Use a color name, hexadecimal value, or normalized RGB(A) tuple.
+                Legacy ColorIndex values remain supported with a
+                DeprecationWarning. Defaults to None.
             line_weight (Optional[float], optional): The line weight (stroke width) for shapes
                 on this layer, in millimeters. Defaults to None.
             line_type (Optional[LineType], optional): The line type for shapes on this layer.
